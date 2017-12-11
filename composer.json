@@ -1,0 +1,25 @@
+{
+    "name": "clearlove777777/yyfframe",
+    "description": "yyf frame",
+    "type": "project",
+    "authors": [
+        {
+            "name": "yyf",
+            "email": "791232178@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "filp/whoops": "^2.0@dev"
+    },
+    "autoload":{
+        "files":[
+            "yyf/lib/helper.php"
+        ],
+        "psr-4":{
+            "yyf\\":"yyf\\",
+            "app\\":"app\\",
+            "system\\":"system\\"
+        }
+    }
+}

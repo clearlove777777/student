@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>操作失败</title>
+		<script type="text/javascript">
+			//3秒跳转
+			setTimeout(function(){
+			    <?php if($url){ ?>
+				location.href = '<?php echo $url ?>'
+					<?php }else{ ?>
+                    location.href = history.back();
+                        <?php } ?>
+			},3000);
+			var second = 3;
+			//倒计时
+			setInterval(function(){
+				second--;
+				if(second <= 1){
+					second = 1;
+				}
+				document.getElementById("second").innerHTML = second;
+			},1000);
+		</script>
+	</head>
+	<body>
+		<span>
+			<span id="second">3</span>秒返回！
+			<?php if($url){ ?>
+				<a href="<?php echo $url ?>">点击返回</a>
+			<?php }else{ ?>
+			<a href="javascript:;" onclick="history.back()">点击返回</a>
+			<?php } ?>
+
+		</span>
+		<hr />
+		<h2><?php echo $msg ?></h2> <span style="color: red;">):</span>
+	</body>
+</html>
